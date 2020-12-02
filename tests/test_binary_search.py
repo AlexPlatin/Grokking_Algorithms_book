@@ -4,9 +4,6 @@ from Binary_search import recursive_binary_search
 
 
 class BinaryTestCase(unittest.TestCase):
-    def setUp(self) -> None:
-        print()
-
     def test_first_simple_case(self):
         values = [1, 2, 3, 4, 5, 6, 7]
         item = 3

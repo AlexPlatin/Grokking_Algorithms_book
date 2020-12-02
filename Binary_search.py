@@ -1,4 +1,5 @@
-def binary_search(values, item):
+def binary_search(values: list, item: int):
+    """Binary search in sorted list"""
     low_index = 0
     high_index = len(values) - 1
     while low_index <= high_index:
@@ -14,6 +15,7 @@ def binary_search(values, item):
 
 
 def recursive_binary_search(values, item, low, high):
+    """Recursive binary search"""
     if low <= high:
         mid = (low + high) // 2
         mid_val = values[mid]
@@ -25,5 +27,4 @@ def recursive_binary_search(values, item, low, high):
             return recursive_binary_search(values, item, mid + 1, high)
     else:
         return None
-
 
