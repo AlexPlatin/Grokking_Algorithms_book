@@ -8,5 +8,8 @@ class TestDijkstra(unittest.TestCase):
         self.algorithm.set_costs_table()
         self.algorithm.set_parents_table()
 
-    def test_simple(self):
+    def test_simple(self) -> None:
         self.assertEqual(self.algorithm.calculate_best_way(), 6)
+
+    def tearDown(self) -> None:
+        self.algorithm = None

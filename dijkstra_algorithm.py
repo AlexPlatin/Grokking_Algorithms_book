@@ -5,7 +5,11 @@ class AlgorithmDijkstra:
         self.parents = {}
         self.closed_nodes = list()
 
-    def set_graph(self):
+    def set_graph(self) -> None:
+        """
+        Set up graph
+        :return:
+        """
         self.graph["start"] = {}
         self.graph["start"]["B"] = 2
         self.graph["start"]["A"] = 6
@@ -16,17 +20,29 @@ class AlgorithmDijkstra:
         self.graph["A"]["fin"] = 1
         self.graph["fin"] = {}
 
-    def set_costs_table(self):
+    def set_costs_table(self) -> None:
+        """
+        Set up cost table with costs from start node
+        :return:
+        """
         self.costs["B"] = 2
         self.costs["A"] = 6
         self.costs["fin"] = float("inf")
 
-    def set_parents_table(self):
+    def set_parents_table(self) -> None:
+        """
+        Set up parents table with parents from start node
+        :return:
+        """
         self.parents["A"] = "start"
         self.parents["B"] = "start"
         self.parents["fin"] = None
 
-    def _find_lowest_cost_node(self):
+    def _find_lowest_cost_node(self) -> str:
+        """
+        Find node with lowest way cost
+        :return:
+        """
         lowest_cost = float("inf")
         lowest_cost_node = None
         for node in self.costs:
@@ -36,7 +52,11 @@ class AlgorithmDijkstra:
                 lowest_cost_node = node
         return lowest_cost_node
 
-    def calculate_best_way(self):
+    def calculate_best_way(self) -> int:
+        """
+        Find best wat from start node to fin node
+        :return:
+        """
         node = self._find_lowest_cost_node()
         while node:
             cost = self.costs[node]
